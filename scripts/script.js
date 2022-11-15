@@ -22,10 +22,15 @@ console.log(r)
 
 function circleArea (radius)
 {
-    return Math.PI * radius * radius;
+    const radiusP = document.querySelector("#radius");
+    const resultP = document.querySelector("#result");
+    radiusP.textContent =radius;
+    let calculatedArea = Math.PI * radius * radius;
+    resultP.textContent = calculatedArea
+    return calculatedArea;
 }
 
 let area = circleArea(r).toFixed(2);
-console.log(radius)
+
 alert(`The area of a circle with radius ${r} is ${area}`)
 

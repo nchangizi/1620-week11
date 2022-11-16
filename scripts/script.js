@@ -34,25 +34,32 @@
 
 // alert(`The area of a circle with radius ${r} is ${area}`)
 const unorderedList = document.querySelector(".shopping");
- 
 
-function populateList(list)
-{
-    for (let i = 0 ; i < list.length; i++)
-    {
-       let listItem =  document.createElement("li");
-       listItem.textContent = list[i]
-       unorderedList.appendChild(listItem);
-    }
+function populateList(list) {
+  for (let i = 0; i < list.length; i++) {
+    let listItem = document.createElement("li");
+    listItem.textContent = list[i];
+    unorderedList.appendChild(listItem);
+  }
 }
 
 const shoppingList = ["cheese", "bread", "green pepper"];
 populateList(shoppingList);
 
-function changeListStyle()
-{
-    unorderedList.classList.remove("circleList");
-    unorderedList.classList.add("squareList");
+function changeListStyle() {
+  unorderedList.classList.remove("circleList");
+  unorderedList.classList.add("squareList");
 }
 
-changeListStyle()
+changeListStyle();
+
+const listItems = document.querySelectorAll(".shopping li");
+
+function greenItem() {
+  for (let i = 0; i < listItems.length; i++) {
+    if (listItems[i].textContent.includes("green")) {
+      listItems[i].classList.add("green");
+    }
+  }
+}
+greenItem();
